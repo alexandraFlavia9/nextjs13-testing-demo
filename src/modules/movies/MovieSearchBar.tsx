@@ -1,13 +1,13 @@
-import { SearchBar } from '@/modules/assets/Asset.style';
+import { SearchBar } from '@/modules/movies/Movie.style';
 import Select from 'react-select';
 
-interface AssetsSearchBarProps {
+interface MovieSearchBarProps {
     selectedCategory: { label: string; value: string };
     categories: { label: string; value: string }[];
     changeCategory: (_: { label: string; value: string }) => void;
     searchByKeyword: (_: string) => void;
 }
-function AssetsSearchBar({ selectedCategory, categories, changeCategory, searchByKeyword }: AssetsSearchBarProps) {
+function MovieSearchBar({ selectedCategory, categories, changeCategory, searchByKeyword }: MovieSearchBarProps) {
     const colourStyles = {
         control: (styles) => ({
             ...styles,
@@ -31,4 +31,4 @@ function AssetsSearchBar({ selectedCategory, categories, changeCategory, searchB
     );
 }
 
-export default AssetsSearchBar;
+export default MovieSearchBar;

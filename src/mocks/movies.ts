@@ -1,6 +1,6 @@
-import { Asset } from '@/types/Asset';
+import { Movie } from '@/types/Movie';
 
-export const assetData: Asset[] = [
+export const movieData: Movie[] = [
     {
         id: 1,
         name: 'Scanners III: The Takeover (Scanner Force)',

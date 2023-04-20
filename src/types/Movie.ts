@@ -1,4 +1,4 @@
-export type Asset = {
+export type Movie = {
     id: number;
     name: string;
     metadata: string[];

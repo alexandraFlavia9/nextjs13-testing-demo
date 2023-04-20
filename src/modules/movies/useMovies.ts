@@ -1,10 +1,10 @@
-import { Asset } from '@/types/Asset';
+import { Movie } from '@/types/Movie';
 import { useEffect, useMemo, useState } from 'react';
 
-export const useAssets = (items: Asset[]) => {
+export const useMovies = (items: Movie[]) => {
     const [searchKeyword, setSearchKeyword] = useState<string>('');
     const [selectedCategory, setSelectedCategory] = useState<{ label: string; value: string }>(null);
-    const [filteredMovies, setFilteredMovies] = useState<Asset[]>([]);
+    const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
 
     useEffect(() => {
         setFilteredMovies(items);
@@ -21,11 +21,9 @@ export const useAssets = (items: Asset[]) => {
         [categories],
     );
 
-    const toggleLike = (asset: Asset) => {
-        setFilteredMovies((assets) => {
-            return assets.map((assetData) =>
-                assetData.id === asset.id ? { ...assetData, liked: !assetData.liked } : assetData,
-            );
+    const toggleLike = (movieData: Movie) => {
+        setFilteredMovies((movies) => {
+            return movies.map((movie) => (movie.id === movieData.id ? { ...movie, liked: !movie.liked } : movie));
         });
     };
 

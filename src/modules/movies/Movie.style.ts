@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     padding: 2.5rem;
 `;
-export const AssetListWrapper = styled.div`
+export const MovieListWrapper = styled.div`
     display: grid;
     margin: 5rem;
     gap: 2.5rem;
@@ -37,7 +37,7 @@ export const Text = styled.p`
 export const IconWrapper = styled.div`
     padding-left: 1rem;
 `;
-export const AssetCardItem = styled.div`
+export const MovieCardItem = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
