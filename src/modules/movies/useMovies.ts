@@ -21,9 +21,14 @@ export const useMovies = (items: Movie[]) => {
         [categories],
     );
 
-    const toggleLike = (movieData: Movie) => {
+    const toggleLike = async (movieData: Movie) => {
+        const result = await fetch(`movies/api/${movieData.id}`, { method: 'PATCH' });
+        const resultData = await result.json();
+        const updatedMovie = resultData.data;
         setFilteredMovies((movies) => {
-            return movies.map((movie) => (movie.id === movieData.id ? { ...movie, liked: !movie.liked } : movie));
+            return movies.map((movie) =>
+                movie.id === updatedMovie.id ? { ...movie, liked: updatedMovie.liked } : movie,
+            );
         });
     };
 
